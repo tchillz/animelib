@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="icon.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyAnimeLib</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            width: 100%;
+            height: 785px;
+            background: rgb(44, 44, 44);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #logo{
+            width: 6%;
+            position: fixed;
+            left: 200px;
+            top: 12px;
+        }
+        #list{
+            display: flex;
+            list-style: none;
+            position: fixed;
+            left: 350px;
+            top: 12px;
+        }
+        .search{
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            right: 480px;
+        }
+        .list{
+            display: inline;
+            padding: 25px ;
+        }
+        .list a{
+            text-decoration: none;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        a:hover{
+            color: red;
+        }
+        #profil{
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            margin-top: -350px;
+            margin-left: 565px;
+            position: fixed;
+        }
+        #inputsearch{
+            width: 188px;
+            border-radius: 20px;
+            height: 25px;
+            border: none;
+            background-color: rgba(255, 255, 255, 0.3);
+            color: rgb(255, 255, 255);
+            position: fixed;
+            margin-top: -350px;
+            margin-left: 365px;
+        }
+        input::placeholder{
+            color: white;
+            padding-left: 12px;
+        }
+        .box{
+            background-color: transparent;
+            border-radius: 20px;
+            box-shadow: 1px 1px 30px 5px rgb(255, 0, 0);
+            height: 450px;
+            width: 400px;
+            top: 200px;
+            position: absolute;
+            justify-content: center;
+            align-items: center;
+        }
+        .contactus{
+        height: 450px;
+        width: 400px;
+        position: absolute;
+        left: 0%;
+        }
+       #contactput{
+            width: 60%;
+            padding: 12px 15px;
+            background-color: rgb(44, 44, 44);
+            border: none;
+            border-bottom: 2px solid red;
+            margin-left: 80px;
+        }
+        .mailput{
+        margin-top: 6px;
+        }
+        textarea{
+            width: 60%;
+            padding: 12px 15px;
+            background-color: rgb(44, 44, 44);
+            border: none;
+            border-bottom: 2px solid red;
+            margin-left: 80px;
+        }
+        button{
+            border-radius: 20px;
+            border: 1px solid rgb(34, 34, 34);
+            background-color: rgb(53, 53, 53);
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 12px 45px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        #btnsend{ 
+            margin-left: 140px; 
+            margin-top: 6px;
+        }
+        button {
+            transition-duration: 0.4s;
+        }
+        button:hover {
+            background-color: red;
+            color: white;
+        }
+        h1{
+            text-align: center;
+            color: red;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body> 
+    <nav>
+        <div class="logo">
+            <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\logo.png" id="logo">
+            <ul id="list">
+                <li class="list">
+                    <a href="home.html">Home</a>
+                </li>
+                <li class="list">
+                    <a href="#">Contact us</a>
+                </li>
+                <li class="list">
+                    <a href="packs.html">Packs</a>
+                </li>
+                <li class="list">
+                    <a href="#">Download</a>
+                </li>
+            </ul>
+        </div>
+        <div class="search">
+            <input type="text" placeholder="search" id="inputsearch">
+            <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\profil.jpg" id="profil">
+        </div>
+    </nav>
+    <div class="box">
+        <div class="contactus">
+            <form >
+                 <h1>Contact Us</h1>      
+                <div class="mailput">
+                    <input id="contactput" type="text" placeholder="Name"/>
+                </div>
+                <div class="mailput">
+                    <input id="contactput" type="email" placeholder="Email"/>
+                </div>
+                <div class="mailput">
+                    <input id="contactput" type="text" placeholder="Phone"/>
+                </div>
+                <textarea cols="30" rows="10" placeholder="Message"></textarea>
+                <button id="btnsend">Send</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

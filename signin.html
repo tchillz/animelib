@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="icon.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyAnimeLib</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            width: 100%;
+            background: rgb(44, 44, 44);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        input::placeholder{
+            color: white;
+        }
+        .signin{
+            height: 450px;
+            width: 400px;
+            position: absolute;
+            justify-content: center;
+            align-items: center;
+            top: 200px;
+            background-color: transparent;
+            border-radius: 20px;
+            box-shadow: 1px 1px 30px 5px rgb(255, 0, 0);
+        }
+        h1{
+            text-align: center;
+            margin-top: 85px;
+            color: rgb(255, 0, 0);
+        }
+        #holderplace{
+            width: 60%;
+            padding: 12px 15px;
+            background-color: transparent;
+            border: none;
+            border-bottom: 2px solid red;
+            margin-left: 60px;
+        }
+        #forget{
+            position: absolute;
+            color: rgb(255, 0, 0);
+            text-decoration: none;
+            margin-left: 120px;
+            margin-top: 13px;
+        }
+        button{
+            border-radius: 20px;
+            border: 1px solid rgb(34, 34, 34);
+            background-color: rgb(53, 53, 53);
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 12px 45px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        #btnsignin{
+            margin-top: 40px;  
+            margin-left: 120px;  
+        }
+        .mailput{
+            margin-top: 40px;
+        }
+        .passput{
+            margin-top: 5px;
+        }
+        .message{
+            position: absolute;
+            margin-top: 65px;
+            margin-left: 70px;
+        }
+        button {
+            transition-duration: 0.4s;
+        }
+        button:hover {
+            background-color: red;
+            color: black;
+        }
+        p{
+            color: white;
+            text-align: center;
+            margin-top: 10px;
+        }
+        a{
+            color: red;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>  
+    <div class="signin">
+        <form action="home.html">
+            <h1>Sign in</h1>      
+            <div class="mailput">
+                <input type="email" placeholder="Email" id="holderplace"/>
+            </div>
+            <div class="passput">
+                <input type="password" placeholder="Password" id="holderplace"/>
+            </div>
+            <a href="#" id="forget">Forgot your password?</a>
+            <button id="btnsignin">Sign In</button>
+            <p>Don't have an account? <a href="signup.html" >Sign up</a></p>
+        </form>
+    </div>             
+</body>
+</html>

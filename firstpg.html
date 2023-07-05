@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="icon.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyAnimeLib</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            width: 100%;
+            height: 785px;
+            background: rgb(44, 44, 44);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }  
+        #x{
+            position: absolute;
+            top: 50%;
+            left: 30%;
+            justify-content: center;
+            align-items: center;
+        }
+        #logo{
+            width: 8%;
+            position: fixed;
+            left: 200px;
+            top: 39px;
+        }
+        #back{
+            width: 100%;
+            opacity: .3;
+        }
+        button{
+            position: fixed;
+            border-radius: 20px;
+            border: 1px solid rgb(34, 34, 34);
+            background-color: rgb(53, 53, 53);
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 12px 45px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        #btnsignin{
+           top: 60px;
+           right: 150px;
+        }
+        button {
+            transition-duration: 0.4s;
+        }
+        button:hover {
+            background-color: red;
+            color: rgb(0, 0, 0);
+        }
+        h1{
+            color: white;
+            text-align: center;
+        }
+        h3{
+            color: white;
+            text-align: center;
+            padding-top: 5px;
+        }
+        #start{
+            position: absolute;
+            border-radius: 5px;
+            margin-left: 15px;
+            margin-top: 10px;
+        }
+        input{
+            width: 50%;
+            padding: 12px 15px;
+            background-color: rgb(44, 44, 44);
+            border: none;
+            border-bottom: 2px solid red;
+            margin-left: 15px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body> 
+    <div id="z">
+        <div id="a">
+            <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\bg.jpg" id="back">
+            <form action="signin.html">
+                <button id=btnsignin>Sign in</button>
+            </form>
+            <div class="logo">
+                <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\logo.png" id="logo">
+            </div>
+        </div>
+        <div id="x">
+            <h1>Unlimited animes movies</h1>
+            <h3>packs now start at 10$/month.</h3>
+            <h3>Ready to watch? Enter your email to create or restart your membership.</h3>
+            <form action="signup.html">
+                <input type="email" placeholder="Email">
+                <button id="start">Get Started</button>
+            </form>
+        </div>  
+    </div>
+</body>
+</html>

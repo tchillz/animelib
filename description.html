@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="icon.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyAnimeLib</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            width: 100%;
+            height: 785px;
+            background: rgb(44, 44, 44);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }  
+        #logo{
+            width: 6%;
+            position: fixed;
+            left: 200px;
+            top: 12px;
+        }
+        ul{
+            display: flex;
+            list-style: none;
+            position: fixed;
+            left: 350px;
+            top: 10px;
+        }
+        li{
+            padding: 25px ;
+        }
+        li a{
+            text-decoration: none;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        a:hover{
+            color: red;
+        }
+        #profil{
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            margin-top: -350px;
+            margin-left: 560px;
+            position: fixed;
+        }
+        .search{
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            right: 400px;
+        }
+        input{
+            width: 188px;
+            border-radius: 20px;
+            height: 25px;
+            border: none;
+            background-color: rgba(255, 255, 255, 0.3);
+            color: white;
+            position: fixed;
+            margin-top: -350px;
+            margin-left: 360px;
+        }
+        input::placeholder{
+            color: white;
+            padding-left: 12px;
+        }
+        .cards{
+            position: absolute;
+            display: flex;
+            top: 220px;
+            left: 190px;
+            box-shadow: 3px 10px 25px 5px black;
+            border-radius: 8px;
+            width: 250px;
+        }
+        #cards{
+            position: relative;
+            min-width: 250px;
+            height: 340px;
+            border-radius: 8px;
+            margin-right: 10px;
+            background: black;
+        }
+        #cards #flayer{
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+            position: relative;
+        }
+        h1{
+            color: white;
+            position: absolute;
+            top: 200px;
+            left: 500px;
+        }
+        button{
+            border-radius: 20px;
+            border: 1px solid rgb(34, 34, 34);
+            background-color: rgb(53, 53, 53);
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 12px 10px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        button {
+            transition-duration: 0.4s;
+        }
+        button:hover {
+            background-color: red;
+            color: white;
+        }
+        form{
+            position: absolute;
+            top: 260px;
+            left: 500px;
+        }
+        .description{
+            width: 500px;
+            font-size: 14px;
+            letter-spacing: 1px;
+            left: 500px;
+            position: absolute;
+            top: 320px;
+            color: white;
+        }
+        #watch{
+            position: absolute;
+            top: 460px;
+            left: 500px;
+        }
+        .watch{
+            border-radius: 5px;
+            width: 150px;
+        }
+        .watch:hover {
+            background-color: rgb(34, 193, 241);
+            color: white;
+        }
+    </style>
+</head>
+<body> 
+    <nav>
+        <div class="logo">
+            <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\logo.png" id="logo">
+            <ul>
+                <li>
+                    <a href="home.html">Home</a>
+                </li>
+                <li>
+                    <a href="contactus.html">Contact us</a>
+                </li>
+                <li>
+                    <a href="packs.html">Packs</a>
+                </li>
+                <li>
+                    <a href="#">Download</a>
+                </li>
+            </ul>
+        </div>
+        <div class="search">
+            <input type="text" placeholder="search" id="inputsearch">
+            <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\profil.jpg" id="profil">
+        </div>
+    </nav>
+    <div class="content">
+        <h1>Naruto: Shippuuden Movie 2 - Kizuna</h1>
+        <form>
+            <button>Action</button>
+            <button>Adventure</button>
+            <button>Romance</button>
+            <button>Comedy</button>
+        </form>
+        <div class="description">
+            <h2>Description:</h2>
+            <p>Naruto Shippuden Movie 2: A mysterious group of ninja called Sora from the Sky Country launch a surprise attack on Leaf Village in order to take revenge - for Leaf nearly destroying the Sky Country during the Second Great Ninja War.</p>       
+        </div>
+        <div class="cards">
+            <a href="#" id="cards">
+                <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\1.jpg" id="flayer">
+            </a>
+        </div>
+        <form id="watch" action="video.html">
+            <button class="watch">Watch</button>
+        </form>
+    </div>
+</body>
+</html>

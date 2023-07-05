@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="icon.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyAnimeLib</title>
+    <style>
+        @media (min-aspect-ratio: 16/9){
+            .vd{
+                width: 100%;
+                height: auto;
+            }
+        }
+        @media (max-aspect-ratio: 16/9){
+            .vd{
+                width: auto;
+                height: 100%;
+            }
+        }
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            width: 100%;
+            height: 785px;
+            background: rgb(44, 44, 44);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+        }
+        video{
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        #logo{
+            width: 6%;
+            position: fixed;
+            left: 200px;
+            top: 15px;
+            z-index: 1;
+        }
+        ul{
+            display: flex;
+            list-style: none;
+            position: fixed;
+            left: 350px;
+            top: 10px;
+            z-index: 1;
+        }
+        li{
+            padding: 25px ;
+        }
+        li a{
+            text-decoration: none;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        a:hover{
+            color: red;
+        }
+        input{
+            width: 188px;
+            border-radius: 20px;
+            height: 25px;
+            border: none;
+            background-color: rgba(255, 255, 255, 0.3);
+            color: white;
+            position: fixed;
+            margin-top: -350px;
+            margin-left: 300px;
+            z-index: 1;
+        }
+        .search{
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            right: 400px;
+        }
+        input::placeholder{
+            color: white;
+            padding-left: 12px;
+        }
+        #profil{
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            margin-top: -350px;
+            margin-left: 500px;
+            position: fixed;
+            z-index: 1;
+        }
+        section{
+            position: absolute;
+            width: 100%;
+            height: auto;
+            bottom: -50px;
+            color: white;
+            left: 75px;
+        }
+        section .cards{
+            position: absolute;
+            width: 88%;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            overflow-x: scroll;
+        }
+        .cards::-webkit-scrollbar{
+            display: none;
+        }
+        #cards{
+            position: relative;
+            min-width: 130px;
+            height: 180px;
+            border-radius: 8px;
+            margin-right: 10px;
+            background: black;
+        }
+        #cards #flayer{
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+            position: relative;
+        }
+        #left{
+            position: absolute;
+            left: 20px;
+            bottom: 45%;
+            background-color: rgba(255, 255, 255, 0.3);
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+        }
+        #right{
+            position: absolute;
+            right: 145px;
+            bottom: 45%;
+            background-color: rgba(255, 255, 255, 0.3);
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+        }
+        #test{
+            position: absolute;
+            margin-top: 250px;
+        }
+        #new{
+            margin-top: 220px;
+            position: absolute;
+        }
+        #test1{
+            position: absolute;
+            margin-top: 500px;
+        }
+        #new1{
+            margin-top: 470px;
+            position: absolute;
+        }
+        .left{
+            width: 100px;
+            width: 100px;
+            position: absolute;
+            left: -30px;
+            top: 100px;
+        }
+        #test2{
+            position: absolute;
+            margin-top: 750px;
+        }
+        #new2{
+            margin-top: 720px;
+            position: absolute;
+        }
+        .right{
+            width: 100px;
+            position: absolute;
+            right: 55px;
+            top: 100px;
+        }
+        .right button{
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: rgba(188, 196, 202, 0.171);
+            border: none;
+        }
+        .left button{
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: rgba(188, 196, 202, 0.171);
+            border: none;
+        }
+        p{
+            font-size: 20px;
+        }
+        .left1{
+            width: 100px;
+            width: 100px;
+            position: absolute;
+            left: -30px;
+            top: 340px;
+        }
+        .right1{
+            width: 100px;
+            position: absolute;
+            right: 55px;
+            top: 340px;
+        }
+        .right1 button{
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: rgba(188, 196, 202, 0.171);
+            border: none;
+        }
+        .left1 button{
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: rgba(188, 196, 202, 0.171);
+            border: none;
+        }
+        .left2{
+            width: 100px;
+            width: 100px;
+            position: absolute;
+            left: -30px;
+            top: 580px;
+        }
+        .right2{
+            width: 100px;
+            position: absolute;
+            right: 55px;
+            top: 580px;
+        }
+        .right2 button{
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: rgba(188, 196, 202, 0.171);
+            border: none;
+        }
+        .left2 button{
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: rgba(188, 196, 202, 0.171);
+            border: none;
+        }
+        .left3{
+            width: 100px;
+            width: 100px;
+            position: absolute;
+            left: -30px;
+            top: 840px;
+        }
+        .right3{
+            width: 100px;
+            position: absolute;
+            right: 55px;
+            top: 840px;
+        }
+        .right3 button{
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: rgba(188, 196, 202, 0.171);
+            border: none;
+        }
+        .left3 button{
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: rgba(188, 196, 202, 0.171);
+            border: none;
+        }
+    </style>
+</head>
+<body>
+        <video class="vd" src="anime.mp4" autoplay muted loop></video>
+        <nav>
+            <div class="logo">
+                <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\logo.png" id="logo">
+                <ul>
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="contactus.html">Contact us</a>
+                    </li>
+                    <li>
+                        <a href="packs.html">Packs</a>
+                    </li>
+                    <li>
+                        <a href="#">Download</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="search">
+                <input type="text" placeholder="search" id="inputsearch">
+                <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\profil.jpg" id="profil">
+            </div>
+        </nav>
+        <section>
+            <h4>Action</h4>
+            <div class="left">
+                <button ><p> < </p></button>
+            </div>
+            <div class="right">
+                <button ><p> > </p></button>
+            </div>
+            <div class="cards">
+                <a href="description.html" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\1.jpg" id="flayer">
+                </a>         
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\2.jpg" id="flayer">
+                </a>      
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\3.jpg" id="flayer">
+                </a> 
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\4.jpg" id="flayer">
+                </a> 
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\5.jpg" id="flayer">
+                </a> 
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\6.jpg" id="flayer">
+                </a> 
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\7.jpg" id="flayer">
+                </a> 
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\8.jpg" id="flayer">
+                </a> 
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\9.jpg" id="flayer">
+                </a> 
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\2.jpg" id="flayer">
+                </a>      
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\3.jpg" id="flayer">
+                </a> 
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\4.jpg" id="flayer">
+                </a> 
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\5.jpg" id="flayer">
+                </a> 
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\6.jpg" id="flayer">
+                </a> 
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\7.jpg" id="flayer">
+                </a> 
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\8.jpg" id="flayer">
+                </a> 
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\9.jpg" id="flayer">
+                </a> 
+            </div>
+        </section>
+        <section>
+            <h4 id="new">Adventure</h4>
+            <div class="left1">
+                <button ><p> < </p></button>
+            </div>
+            <div class="right1">
+                <button ><p> > </p></button>
+            </div>
+            <div class="cards" id="test">
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\1.jpg" id="flayer">
+                </a>         
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\2.jpg" id="flayer">
+                </a>      
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\3.jpg" id="flayer">
+                </a> 
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\4.jpg" id="flayer">
+                </a> 
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\5.jpg" id="flayer">
+                </a> 
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\6.jpg" id="flayer">
+                </a> 
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\7.jpg" id="flayer">
+                </a> 
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\8.jpg" id="flayer">
+                </a> 
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\9.jpg" id="flayer">
+                </a> 
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\2.jpg" id="flayer">
+                </a>      
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\3.jpg" id="flayer">
+                </a> 
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\4.jpg" id="flayer">
+                </a> 
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\5.jpg" id="flayer">
+                </a> 
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\6.jpg" id="flayer">
+                </a> 
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\7.jpg" id="flayer">
+                </a> 
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\8.jpg" id="flayer">
+                </a> 
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\9.jpg" id="flayer">
+                </a> 
+            </div>
+        </section>
+        <section>
+            <h4 id="new1">Romance</h4>
+            <div class="left2">
+                <button ><p> < </p></button>
+            </div>
+            <div class="right2">
+                <button ><p> > </p></button>
+            </div>
+            <div class="cards" id="test1">
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\1.jpg" id="flayer">
+                </a>         
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\2.jpg" id="flayer">
+                </a>      
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\3.jpg" id="flayer">
+                </a> 
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\4.jpg" id="flayer">
+                </a> 
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\5.jpg" id="flayer">
+                </a> 
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\6.jpg" id="flayer">
+                </a> 
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\7.jpg" id="flayer">
+                </a> 
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\8.jpg" id="flayer">
+                </a> 
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\9.jpg" id="flayer">
+                </a> 
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\2.jpg" id="flayer">
+                </a>      
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\3.jpg" id="flayer">
+                </a> 
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\4.jpg" id="flayer">
+                </a> 
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\5.jpg" id="flayer">
+                </a> 
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\6.jpg" id="flayer">
+                </a> 
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\7.jpg" id="flayer">
+                </a> 
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\8.jpg" id="flayer">
+                </a> 
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\9.jpg" id="flayer">
+                </a> 
+            </div>
+        </section>
+        <section>
+            <h4 id="new2">Comedy</h4>
+            <div class="left3">
+                <button ><p> < </p></button>
+            </div>
+            <div class="right3">
+                <button ><p> > </p></button>
+            </div>
+            <div class="cards" id="test2">
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\1.jpg" id="flayer">
+                </a>         
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\2.jpg" id="flayer">
+                </a>      
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\3.jpg" id="flayer">
+                </a> 
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\4.jpg" id="flayer">
+                </a> 
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\5.jpg" id="flayer">
+                </a> 
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\6.jpg" id="flayer">
+                </a> 
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\7.jpg" id="flayer">
+                </a> 
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\8.jpg" id="flayer">
+                </a> 
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\9.jpg" id="flayer">
+                </a> 
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\2.jpg" id="flayer">
+                </a>      
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\3.jpg" id="flayer">
+                </a> 
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\4.jpg" id="flayer">
+                </a> 
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\5.jpg" id="flayer">
+                </a> 
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\6.jpg" id="flayer">
+                </a> 
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\7.jpg" id="flayer">
+                </a> 
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\8.jpg" id="flayer">
+                </a> 
+                <a href="#" id="cards">
+                    <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\anime home image\9.jpg" id="flayer">
+                </a> 
+            </div>
+        </section>
+    <script>
+        //part1
+        let left_btn = document.getElementsByClassName("left")[0];
+        let right_btn = document.getElementsByClassName("right")[0];
+        let cards = document.getElementsByClassName("cards")[0];
+
+        left_btn.addEventListener('click', ()=> {
+            cards.scrollLeft -=140;
+        })
+        right_btn.addEventListener('click', ()=> {
+            cards.scrollLeft +=140;
+        })
+        //part2
+        let left_btn1 = document.getElementsByClassName("left1")[0];
+        let right_btn1 = document.getElementsByClassName("right1")[0];
+        let cards1 = document.getElementById("test")[0];
+
+        left_btn1.addEventListener('click', ()=> {
+            test.scrollLeft -=140;
+        })
+        right_btn1.addEventListener('click', ()=> {
+            test.scrollLeft +=140;
+        })
+        //part3
+        let left_btn2 = document.getElementsByClassName("left2")[0];
+        let right_btn2 = document.getElementsByClassName("right2")[0];
+        let cards2 = document.getElementById("test1")[0];
+
+        left_btn2.addEventListener('click', ()=> {
+            test1.scrollLeft -=140;
+        })
+        right_btn2.addEventListener('click', ()=> {
+            test1.scrollLeft +=140;
+        })
+        //part4
+        let left_btn3 = document.getElementsByClassName("left3")[0];
+        let right_btn3 = document.getElementsByClassName("right3")[0];
+        let cards3 = document.getElementById("test2")[0];
+
+        left_btn3.addEventListener('click', ()=> {
+            test2.scrollLeft -=140;
+        })
+        right_btn3.addEventListener('click', ()=> {
+            test2.scrollLeft +=140;
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="icon.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyAnimeLib</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            width: 100%;
+            height: 785px;
+            background: rgb(44, 44, 44);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }  
+        #logo{
+            width: 6%;
+            position: fixed;
+            left: 200px;
+            top: 39px;
+        }
+        ul{
+            display: flex;
+            list-style: none;
+            position: fixed;
+            left: 350px;
+            top: 37px;
+        }
+        li{
+            padding: 25px ;
+        }
+        li a{
+            text-decoration: none;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        a:hover{
+            color: red;
+        }
+        #profil{
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            margin-top: -335px;
+            margin-left: 560px;
+            position: fixed;
+        }
+        input{
+            width: 188px;
+            border-radius: 20px;
+            height: 25px;
+            border: none;
+            background-color: rgba(255, 255, 255, 0.3);
+            color: white;
+            position: fixed;
+            margin-top: -335px;
+            margin-left: 360px;
+        }
+        input::placeholder{
+            color: white;
+        }
+        video{
+            width: 60%;
+        }
+        .video{
+            position: absolute;
+            left: 480px;
+        }
+    </style>
+</head>
+<body> 
+    <nav>
+        <div class="logo">
+            <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\logo.png" id="logo">
+            <ul>
+                <li>
+                    <a href="home.html">Home</a>
+                </li>
+                <li>
+                    <a href="contactus.html">Contact us</a>
+                </li>
+                <li>
+                    <a href="packs.html">Packs</a>
+                </li>
+                <li>
+                    <a href="C:\Users\HP\OneDrive\Bureau\raport.docx" download="raport.docx">Download</a>
+                </li>
+            </ul>
+        </div>
+        <div class="search">
+            <input type="text" placeholder="search" id="inputsearch">
+            <img src="C:\Users\HP\OneDrive\Bureau\projet\myanimelib\profil.jpg" id="profil">
+        </div>
+    </nav>
+    <div class="video">
+        <video src="1.mp4" controls></video>
+    </div>
+</body>
+</html>

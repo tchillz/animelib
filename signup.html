@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="icon.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyAnimeLib</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            width: 100%;
+            background: rgb(44, 44, 44);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        input::placeholder{
+            color: white;
+        }
+        .signup{
+            background-color: transparent;
+            border-radius: 20px;
+            box-shadow: 1px 1px 30px 5px rgb(255, 0, 0);
+            height: 450px;
+            width: 400px;
+            top: 200px;
+            position: absolute;
+            justify-content: center;
+            align-items: center;
+        }
+        button{
+            border-radius: 20px;
+            border: 1px solid rgb(34, 34, 34);
+            background-color: rgb(53, 53, 53);
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 12px 45px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        h1{
+            text-align: center;
+            margin-top: 85px;
+            color: rgb(255, 0, 0);
+        }
+        p{
+            text-align: center;
+        }
+        input{
+            width: 60%;
+            padding: 12px 15px;
+            background-color: rgb(44, 44, 44);
+            border: none;
+            border-bottom: 2px solid red;
+            margin-left: 60px;
+        }
+        a{
+            color: aquamarine;
+            font-size: 14px;
+            text-decoration: none;
+            margin: 15px 0px;
+        }
+        #btnsignup{
+            margin-top: 20px;
+            margin-left: 120px;
+        }
+        .nameput{
+            margin-top: 40px;
+        }
+        .mailput{
+            margin-top: 5px;
+        }
+        .passput{
+            margin-top: 5px;
+        }
+        button {
+            transition-duration: 0.4s;
+        }
+        button:hover {
+            background-color: red;
+            color: rgb(0, 0, 0);
+        }
+        a{
+            color: red;
+            text-decoration: none;
+        }
+        p{
+            color: white;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="signup">
+        <form action="packs.html">
+        <h1>Create Account</h1>
+        <div class="nameput">
+            <input type="text" placeholder="Name" />
+        </div>
+        <div class="mailput">
+            <input type="email" placeholder="Email"/>
+        </div>
+        <div class="passput">
+            <input type="password" placeholder="Password" />
+        </div>
+        <button id="btnsignup">Sign Up</button>
+        <p>Already have an account? <a href="signin.html">Sign in</a> </p>
+        </form>
+    </div>
+</body>
+</html>
